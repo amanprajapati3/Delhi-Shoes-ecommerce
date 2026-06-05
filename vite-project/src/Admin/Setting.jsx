@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "../services/Axios";
+import axios from "../services/axios";
 import { toast } from "react-hot-toast";
 
 const Setting = () => {

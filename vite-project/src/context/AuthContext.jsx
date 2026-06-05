@@ -5,7 +5,7 @@ import {
   useState,
 } from "react";
 
-import axios from "../services/Axios";
+import axios from "../services/axios";
 
 // CREATE CONTEXT
 const AuthContext = createContext();

@@ -9,7 +9,7 @@ import {
   FaTrash,
   FaImage,
 } from "react-icons/fa";
-import axios from "../services/Axios";
+import axios from "../services/axios";
 
 import { toast } from "react-hot-toast";
 
