@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+        .pd-root {
+          font-family: 'DM Sans', sans-serif;
+          background: #fafaf8;
+          min-height: 100vh;
+        }
+
+        .pd-display {
+          font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Thumbnail */
+        .pd-thumb {
+          transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+          filter: grayscale(20%);
+        }
+        .pd-thumb:hover {
+          filter: grayscale(0%);
+          transform: scale(1.03);
+        }
+        .pd-thumb.active {
+          filter: grayscale(0%);
+          box-shadow: 0 0 0 2px #1a1a1a;
+        }
+
+        /* Main image */
+        .pd-main-img {
+          transition: opacity 0.35s ease;
+        }
+        .pd-main-img.loading {
+          opacity: 0;
+        }
+        .pd-main-img.loaded {
+          opacity: 1;
+        }
+
+        /* Nav arrows */
+        .pd-nav-btn {
+          transition: all 0.2s ease;
+          backdrop-filter: blur(8px);
+          background: rgba(255,255,255,0.85);
+        }
+        .pd-nav-btn:hover {
+          background: rgba(255,255,255,1);
+          transform: scale(1.08);
+          box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+
+        /* Size buttons */
+        .pd-size-btn {
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
+          overflow: hidden;
+        }
+        .pd-size-btn::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: #1a1a1a;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.25s ease;
+          z-index: -1;
+        }
+        .pd-size-btn:hover::before,
+        .pd-size-btn.selected::before {
+          transform: scaleX(1);
+        }
+        .pd-size-btn:hover,
+        .pd-size-btn.selected {
+          color: white;
+          border-color: #1a1a1a;
+        }
+
+        /* Color buttons */
+        .pd-color-btn {
+          transition: all 0.2s ease;
+        }
+        .pd-color-btn:hover {
+          background: #f0ede8;
+        }
+        .pd-color-btn.selected {
+          background: #1a1a1a;
+          color: white;
+          border-color: #1a1a1a;
+        }
+
+        /* CTA buttons */
+        .pd-btn-cart {
+          position: relative;
+          overflow: hidden;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          letter-spacing: 0.05em;
+        }
+        .pd-btn-cart::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: rgba(255,255,255,0.1);
+          transform: translateY(100%);
+          transition: transform 0.25s ease;
+        }
+        .pd-btn-cart:hover::after {
+          transform: translateY(0);
+        }
+        .pd-btn-cart:active {
+          transform: scale(0.97);
+        }
+
+        .pd-btn-buy {
+          position: relative;
+          overflow: hidden;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          letter-spacing: 0.05em;
+          background: linear-gradient(135deg, #c8a96e 0%, #a07840 100%);
+        }
+        .pd-btn-buy:hover {
+          background: linear-gradient(135deg, #d4b97e 0%, #b08850 100%);
+          box-shadow: 0 8px 30px rgba(160, 120, 64, 0.35);
+        }
+        .pd-btn-buy:active {
+          transform: scale(0.97);
+        }
+
+        .pd-btn-wish {
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          letter-spacing: 0.05em;
+        }
+        .pd-btn-wish:hover {
+          background: #1a1a1a;
+          color: white;
+        }
+        .pd-btn-wish.wishlisted {
+          background: #1a1a1a;
+          color: white;
+          border-color: #1a1a1a;
+        }
+        .pd-btn-wish:active {
+          transform: scale(0.97);
+        }
+
+        /* Accordion */
+        .pd-accordion-content {
+          animation: slideDown 0.25s ease forwards;
+          overflow: hidden;
+        }
+        @keyframes slideDown {
+          from { opacity: 0; transform: translateY(-6px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Share modal */
+        .pd-modal-overlay {
+          animation: fadeIn 0.2s ease;
+        }
+        .pd-modal-box {
+          animation: scaleIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+          from { opacity: 0; transform: scale(0.92); }
+          to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Share icons */
+        .pd-share-icon {
+          transition: all 0.2s ease;
+        }
+        .pd-share-icon:hover {
+          transform: translateY(-3px);
+        }
+
+        /* Related products */
+        .pd-related-card {
+          transition: transform 0.25s ease;
+        }
+        .pd-related-card:hover {
+          transform: translateY(-4px);
+        }
+
+        /* Badge */
+        .pd-badge {
+          background: linear-gradient(135deg, #c8a96e, #a07840);
+          letter-spacing: 0.08em;
+        }
+
+        /* Divider line */
+        .pd-divider {
+          background: linear-gradient(to right, transparent, #d4c9b8, transparent);
+          height: 1px;
+          border: none;
+        }
+
+        /* Price */
+        .pd-price-main {
+          font-family: 'Cormorant Garamond', serif;
+          font-weight: 600;
+        }
+
+        /* Spinner */
+        .pd-spinner {
+          width: 18px;
+          height: 18px;
+          border: 2px solid rgba(255,255,255,0.3);
+          border-top-color: white;
+          border-radius: 50%;
+          animation: spin 0.6s linear infinite;
+        }
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
+
+        /* Scrollbar hide */
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }

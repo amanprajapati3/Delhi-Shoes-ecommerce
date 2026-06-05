@@ -1,0 +1,139 @@
+.sweep-item {
+      background-image: linear-gradient(to right, #000 50%, transparent 50%);
+      background-size: 200% 100%;
+      background-position: 100%;
+      transition: background-position 0.35s ease, color 0.2s ease;
+    }
+    .sweep-item:hover { background-position: 0%; color: #fff !important; }
+
+    .sweep-nav {
+      background-image: linear-gradient(to right, #000 50%, transparent 50%);
+      background-size: 200% 100%;
+      background-position: 100%;
+      transition: background-position 0.35s ease, color 0.2s ease;
+      border-radius: 6px;
+    }
+    .sweep-nav:hover { background-position: 0%; color: #fff !important; }
+
+    .sweep-mobile {
+      background-image: linear-gradient(to right, #000 50%, transparent 50%);
+      background-size: 200% 100%;
+      background-position: 100%;
+      transition: background-position 0.35s ease, color 0.2s ease;
+      border-radius: 8px;
+    }
+    .sweep-mobile:hover { background-position: 0%; color: #fff !important; }
+
+    .sweep-logout {
+      background-image: linear-gradient(to right, #000 50%, transparent 50%);
+      background-size: 200% 100%;
+      background-position: 100%;
+      transition: background-position 0.35s ease, color 0.2s ease;
+      border-radius: 6px;
+    }
+    .sweep-logout:hover { background-position: 0%; color: #fca5a5 !important; }
+
+    /* ── Search bar ── */
+    .search-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Desktop inline search input */
+    .search-input-desktop {
+      width: 0;
+      opacity: 0;
+      padding: 0;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #fff;
+      font-size: 0.875rem;
+      transition: width 0.4s cubic-bezier(0.4,0,0.2,1),
+                  opacity 0.3s ease,
+                  padding 0.3s ease;
+      border-bottom: 1.5px solid transparent;
+    }
+    .search-input-desktop.open {
+      width: 180px;
+      opacity: 1;
+      padding: 2px 6px;
+      border-bottom-color: #a5b4fc;
+    }
+    .search-input-desktop::placeholder { color: #9ca3af; }
+
+    /* Mobile search bar slide from top */
+    .mobile-search-bar {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1),
+                  opacity 0.3s ease,
+                  padding 0.3s ease;
+      opacity: 0;
+    }
+    .mobile-search-bar.open {
+      max-height: 80px;
+      opacity: 1;
+    }
+
+    /* Suggestions dropdown */
+    .suggestions-box {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+      border: 1px solid #e5e7eb;
+      overflow: hidden;
+      z-index: 100;
+      animation: suggFadeIn 0.2s ease;
+    }
+    @keyframes suggFadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .sugg-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      text-decoration: none;
+      color: #1f2937;
+      font-size: 0.875rem;
+    }
+    .sugg-item:hover { background: #f3f4f6; }
+    .sugg-item .sugg-icon {
+      font-size: 0.7rem;
+      color: #9ca3af;
+      flex-shrink: 0;
+    }
+    .sugg-label { font-weight: 500; }
+    .sugg-meta  { font-size: 0.75rem; color: #6b7280; margin-left: auto; }
+
+    .sugg-section-title {
+      padding: 8px 16px 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      background: #fafafa;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    /* highlight match */
+    .sugg-highlight { color: #6366f1; font-weight: 700; }
+
+    /* search icon pulse when active */
+    @keyframes iconPulse {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.25); }
+      100% { transform: scale(1); }
+    }
+    .search-icon-active { animation: iconPulse 0.3s ease; color: #a5b4fc; }

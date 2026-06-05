@@ -1,0 +1,5 @@
+@import "tailwindcss";
+a.active p{
+      color: black;
+      background-color: white;
+}
