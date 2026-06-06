@@ -9,7 +9,7 @@ import {
 import { toast } from "react-hot-toast";
 import { useAuth } from "../context/AuthContext";
 import { useCart } from "../context/CartContext";
-import axios from "../services/Axios";
+import axios from "../services/axios";
 import Loader from "../components/Loaders";
 
 const Checkout = () => {

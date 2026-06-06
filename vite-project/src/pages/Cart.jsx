@@ -4,7 +4,7 @@ import {FaTrash, FaArrowRight, FaShoppingBag, FaShippingFast, FaLock, FaTag, FaT
 import { useCart } from "../context/CartContext";
 import Loader from "../components/Loaders";
 import { toast } from "react-hot-toast";
-import axios from "../services/Axios";
+import axios from "../services/axios";
 
 // ─── useInView ─────────────────────────────────────────────────────
 function useInView() {
